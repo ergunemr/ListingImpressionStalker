@@ -6,7 +6,7 @@
 Tracking impression event of cells in the collection views requires a bit of dirty work especially it has minimum percentage of cell constraint to count as viewed. ListingImpressionStalker provides a solution for it. In the demo project, cells which are counted as viewed filled with green color as you can below, of course depends on their min percent values.
 
 %30 Min Percentage  | %90 Min Percentage
---- | --- | ---
+--- | ---
 ![](https://i.hizliresim.com/gOgV62.gif) | ![](https://i.hizliresim.com/Z96Q3Z.gif)
 
 ## How is it set up?
