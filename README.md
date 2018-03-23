@@ -1,9 +1,9 @@
 # Listing Impression Stalker
 
-**Swift solution for marketing impression event tracking on UICollectionView**
+**Swifty solution for marketing impression event tracking on UICollectionView**
 
 ## What does ListingImpressionStalker do?
-Tracking impression event of cells in the collection views requires a bit of dirty work especially it has minimum percentage of cell constraint to count as viewed. ListingImpressionStalker provides a solution for it. In the demo project, cells which are counted as viewed filled with green color as you can below, of course depends on their min percent values.
+Tracking impression event of cells in the collection views requires a bit of dirty work especially it has minimum percentage of cell constraint to count as viewed. ListingImpressionStalker provides a solution for it. In the demo project, cells which are counted as viewed filled with green color as you can see below, of course it depends on their minimum percent values.
 
 %30 Min Percentage  | %90 Min Percentage
 --- | ---
@@ -21,10 +21,10 @@ Just drag and drop ListingImpressionStalker to your project.
         }
     }
 ```
-* Make sure your view controller conforms "_ListingImpressionStalkerDelegate_"
-* In your custom UICollectionViewCell class, conform "_ListingImpressionItem_" protocol to provide unique identifier for each item to ensure each items event sent only once.
-* In your view controller, call _stalkCells()_ method in viewDidAppear() and scrollViewDidScroll() methods.
-* After it is configured, _sendEventForCell(atIndexPath indexPath:IndexPath)_ method fired from ListingImpressionStalker when a cell's visible percent becomes greater than minimumPercentageOfCell. A cell index sent via this method never sent again.
+* Make sure your view controller conforms "_*ListingImpressionStalkerDelegate*_"
+* In your custom UICollectionViewCell class, conform "_*ListingImpressionItem*_" protocol to provide unique identifier for each item to ensure each items event sent only once.
+* In your view controller, call _*stalkCells()*_ method in viewDidAppear() and scrollViewDidScroll() methods.
+* After it is configured, _*sendEventForCell(atIndexPath indexPath:IndexPath)*_ method fired from ListingImpressionStalker when a cell's visible percent becomes greater than minimumPercentageOfCell. A cell index sent via this method never sent again.
 
 ## Parameters
 * **minimumPercentageOfCell:** Minimum percentage of cell to count cell as viewed. If it is not set properly, it is set to 0.5 automatically.
