@@ -75,7 +75,7 @@ class ListingImpressionStalker: NSObject {
         let cellFrameInSuper = collectionView.convert(layoutAttributes.frame, to: collectionView.superview)
         
         let interSectionRect = cellFrameInSuper.intersection(collectionView.frame)
-        let percentOfIntersection: CGFloat = interSectionRect.height/cellFrameInSuper.height
+        let percentOfIntersection: CGFloat = (interSectionRect.height*interSectionRect.width)/(cellFrameInSuper.height*cellFrameInSuper.width)
         
         return percentOfIntersection
     }
