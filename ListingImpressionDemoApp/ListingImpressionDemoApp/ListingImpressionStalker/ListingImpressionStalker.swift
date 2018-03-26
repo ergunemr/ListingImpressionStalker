@@ -20,7 +20,7 @@ class ListingImpressionStalker: NSObject {
     
     //MARK: Variables & Constants
     let minimumPercentageOfCell: CGFloat
-    let collectionView: UICollectionView
+    weak var collectionView: UICollectionView?
     static fileprivate var alreadySentIdentifiers = [String]()
     static let minimumPercentageOfCellDefaultValue = CGFloat(0.5)
     static let minimumPercentageMinValue = CGFloat.leastNonzeroMagnitude
@@ -48,13 +48,13 @@ class ListingImpressionStalker: NSObject {
     //MARK: Public Methods
     func stalkCells(){
         
-        for cell in collectionView.visibleCells {
-            if let listingItemCell = cell as? UICollectionViewCell&ListingImpressionItem{
-                let visiblePercentOfCell = percentOfVisiblePart(ofCell: listingItemCell, inCollectionView: collectionView)
+        for cell in collectionView!.visibleCells {
+            if let listingItemCell = cell as? UICollectionViewCell & ListingImpressionItem{
+                let visiblePercentOfCell = percentOfVisiblePart(ofCell: listingItemCell, inCollectionView: collectionView!)
                 
                 if visiblePercentOfCell >= minimumPercentageOfCell, !ListingImpressionStalker.alreadySentIdentifiers.contains(listingItemCell.getUniqueId()){
                     
-                    guard let indexPath = collectionView.indexPath(for: listingItemCell), let delegate = delegate else{
+                    guard let indexPath = collectionView!.indexPath(for: listingItemCell), let delegate = delegate else{
                         continue
                     }
                     delegate.sendEventForCell(atIndexPath: indexPath)
