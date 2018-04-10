@@ -7,7 +7,7 @@ Tracking impression event of cells in the collection views requires a bit of dir
 
 %30 Min Percentage  | %90 Min Percentage
 --- | ---
-![](https://i.hizliresim.com/gOgV62.gif) | ![](https://i.hizliresim.com/Z96Q3Z.gif)
+![](https://media.giphy.com/media/FdUHaM182wArcUa73F/giphy.gif) | ![](https://media.giphy.com/media/5t5H8J5Vg25ErGq9ds/giphy.gif)
 
 ## How is it set up?
 Just drag and drop ListingImpressionStalker to your project.
